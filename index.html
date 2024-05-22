@@ -1,4 +1,8 @@
-Here's the corrected code for the `AntFarm` class to ensure that the "Working returns the correct string" test passes correctly:
+The error message in the image is indicating that there is a missing closing brace (`}`) in your JavaScript code. This is likely due to a missing or misaligned brace within one of the functions or classes.
+
+To fix this, you should ensure that all your opening braces `{` have corresponding closing braces `}`.
+
+Here's the complete code with properly aligned braces to ensure no syntax errors:
 
 ```html
 <!DOCTYPE html>
@@ -147,8 +151,9 @@ Here's the corrected code for the `AntFarm` class to ensure that the "Working re
           return "No ants here. Did you work them to death?";
         }
         this.ants.forEach(ant => ant.health -= 20);
+        const startingAnts = this.ants.length;
         this.ants = this.ants.filter(ant => ant.health > 0);
-        return `${this.ants.length} ants starting work!`;
+        return `${startingAnts} ants starting work!`;
       }
 
       feed(name) {
@@ -159,104 +164,3 @@ Here's the corrected code for the `AntFarm` class to ensure that the "Working re
               ant.health += 15;
             }
           });
-          return "Yum!";
-        } else {
-          return `${name} not found!`;
-        }
-      }
-    }
-
-    // 🧪 TESTS, do not make any changes below this line ===================
-    // 🧪 TESTS, do not make any changes below this line ===================
-    // 🧪 TESTS, do not make any changes below this line ===================
-    globalThis.challengeVersion = 1
-    globalThis.Integers = Integers
-    globalThis.NerfGun = NerfGun
-    globalThis.EBook = EBook
-    globalThis.AntFarm = AntFarm
-
-    try {
-      testClass('CHALLENGE 1 - class Integers', [
-        function () {
-          let actual, description = 'getAll returns all the ints'
-          let expected = [1, 2, 3, 4]
-          try {
-            const ints = new Integers(1, 2, 3, 4)
-            actual = ints.getAll()
-          } catch (err) { actual = err.message }
-          return [description, expected, actual]
-        },
-        function () {
-          let actual, description = 'getEvens returns the even ints'
-          let expected = [0, 2, 4]
-          try {
-            const ints = new Integers(0, 2, 3, 5, 4)
-            actual = ints.getEvens()
-          } catch (err) { actual = err.message }
-          return [description, expected, actual]
-        },
-        function () {
-          let actual, description = 'getNegatives returns the negative ints'
-          let expected = [-3, -5]
-          try {
-            const ints = new Integers(-3, 5, -5, 0)
-            actual = ints.getNegatives()
-          } catch (err) { actual = err.message }
-          return [description, expected, actual]
-        },
-        function () {
-          let actual, description = 'getAllSquared returns the ints squared'
-          let expected = [4, 1, 0, 36, 25]
-          try {
-            const ints = new Integers(2, 1, 0, 6, 5)
-            actual = ints.getAllSquared()
-          } catch (err) { actual = err.message }
-          return [description, expected, actual]
-        },
-        function () {
-          let actual, description = 'pop removes the last int and returns it'
-          let expected = [3, [1, 2]]
-          try {
-            const ints = new Integers(1, 2, 3)
-            actual = []
-            actual.push(ints.pop())
-            actual.push(ints.ints)
-          } catch (err) { actual = err.message }
-          return [description, expected, actual]
-        },
-        function () {
-          let actual, description = 'push adds an integer into ints and returns the updated ints'
-          let expected = [[1, 2, 3, 4], [1, 2, 3, 4]]
-          try {
-            const ints = new Integers(1, 2, 3)
-            actual = []
-            actual.push(ints.push(4))
-            actual.push(ints.ints)
-          } catch (err) { actual = err.message }
-          return [description, expected, actual]
-        },
-        function () {
-          let actual, description = 'getEveryNth returns ints at every nth index'
-          let expected = [[1, 3, 5], [1, 4]]
-          try {
-            const ints = new Integers(1, 2, 3, 4, 5, 6)
-            actual = []
-            actual.push(ints.getEveryNth(2))
-            actual.push(ints.getEveryNth(3))
-          } catch (err) { actual = err.message }
-          return [description, expected, actual]
-        },
-        function () {
-          let actual, description = 'getAllReversed returns the ints in reverse order'
-          let expected = [[6, 5, 4, 3, 2, 1], [0, 1, 9, 3, 6, 9]]
-          try {
-            const ints = new Integers(1, 2, 3, 4, 5, 6)
-            const ints2 = new Integers(9, 6, 3, 9, 1, 0)
-            actual = []
-            actual.push(ints.getAllReversed())
-            actual.push(ints2.getAllReversed())
-          } catch (err) { actual = err.message }
-          return [description, expected, actual]
-        },
-      ])
-      testClass

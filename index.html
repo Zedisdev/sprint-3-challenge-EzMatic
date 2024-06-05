@@ -156,11 +156,13 @@ Here's the complete code with properly aligned braces to ensure no syntax errors
         return `${startingAnts} ants starting work!`;
       }
 
-      feed(name) {
-        const found = this.ants.some(ant => ant.name === name);
-        if (found) {
-          this.ants.forEach(ant => {
-            if (ant.name === name) {
-              ant.health += 15;
-            }
-          });
+      Feed(name) {
+  const found = this.ants.some(ant => ant.name === name);
+  if (found) {
+    this.ants.forEach(ant => {
+      if (ant.name === name) {
+        ant.health += 15;
+      }
+    });
+  }
+}}

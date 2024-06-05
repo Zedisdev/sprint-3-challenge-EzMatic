@@ -1,10 +1,3 @@
-The error message in the image is indicating that there is a missing closing brace (`}`) in your JavaScript code. This is likely due to a missing or misaligned brace within one of the functions or classes.
-
-To fix this, you should ensure that all your opening braces `{` have corresponding closing braces `}`.
-
-Here's the complete code with properly aligned braces to ensure no syntax errors:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +18,6 @@ Here's the complete code with properly aligned braces to ensure no syntax errors
     .widget p {
       font-style: italic;
     }
-
   </style>
 </head>
 
@@ -157,12 +149,16 @@ Here's the complete code with properly aligned braces to ensure no syntax errors
       }
 
       Feed(name) {
-  const found = this.ants.some(ant => ant.name === name);
-  if (found) {
-    this.ants.forEach(ant => {
-      if (ant.name === name) {
-        ant.health += 15;
+        const found = this.ants.some(ant => ant.name === name);
+        if (found) {
+          this.ants.forEach(ant => {
+            if (ant.name === name) {
+              ant.health += 15;
+            }
+          });
+        }
       }
-    });
-  }
-}
+    }
+  </script>
+</body>
+</html>

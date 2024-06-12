@@ -136,8 +136,7 @@
     }
 
     // 👉 CHALLENGE 4 AntFarm
-    // 👉 CHALLENGE 4 AntFarm
-class AntFarm {
+    class AntFarm {
   constructor(...ants) {
     this.ants = ants.map(name => ({ name, health: 100 }));
   }
@@ -154,6 +153,7 @@ class AntFarm {
       return ant;
     }).filter(ant => ant.health > 0);
 
+    let currentAntCount = this.ants.length;
     let antsThatWorked = initialAntCount;
 
     return `${antsThatWorked} ants starting work!`;
@@ -172,6 +172,7 @@ class AntFarm {
 
     return found ? "Yum!" : `${name} not found!`;
   }
+}
 
     // 🧪 TESTS, do not make any changes below this line ===================
     // 🧪 TESTS, do not make any changes below this line ===================
